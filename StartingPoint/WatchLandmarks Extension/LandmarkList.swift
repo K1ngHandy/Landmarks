@@ -1,9 +1,10 @@
-/*
-See LICENSE folder for this sample’s licensing information.
-
-Abstract:
-A view showing a list of landmarks.
-*/
+//
+//  LandmarkList.swift
+//  WatchLandmarks Extension
+//
+//  Created by Stephen Handy on 12/20/22.
+//  Copyright © 2022 Apple. All rights reserved.
+//
 
 import SwiftUI
 
@@ -16,7 +17,7 @@ struct LandmarkList: View {
             (!showFavoritesOnly || landmark.isFavorite)
         }
     }
-
+    
     var body: some View {
         NavigationView {
             List {
@@ -33,7 +34,6 @@ struct LandmarkList: View {
                 }
             }
             .navigationTitle("Landmarks")
-            .frame(minWidth: 300)
         }
     }
 }

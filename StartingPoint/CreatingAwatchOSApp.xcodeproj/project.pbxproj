@@ -27,6 +27,7 @@
 		6DCB33452952124B00EED679 /* hikeData.json in Resources */ = {isa = PBXBuildFile; fileRef = C20D782524B6CE82002E7AEA /* hikeData.json */; };
 		6DCB33462952124B00EED679 /* LandmarksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20D77ED24B665D7002E7AEA /* LandmarksApp.swift */; };
 		6DCB33482952139300EED679 /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB33472952139300EED679 /* LandmarkDetail.swift */; };
+		6DCB334A29521AD800EED679 /* LandmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCB334929521AD800EED679 /* LandmarkList.swift */; };
 		C20D77EE24B665D7002E7AEA /* LandmarksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20D77ED24B665D7002E7AEA /* LandmarksApp.swift */; };
 		C20D77F024B665D7002E7AEA /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20D77EF24B665D7002E7AEA /* LandmarkDetail.swift */; };
 		C20D77F224B665D8002E7AEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C20D77F124B665D8002E7AEA /* Assets.xcassets */; };
@@ -61,7 +62,6 @@
 		C2D89DF024B8F7850096C79B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2D89DEF24B8F7850096C79B /* Preview Assets.xcassets */; };
 		C2D89DF524B8F7850096C79B /* WatchLandmarks.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C2D89DD424B8F7840096C79B /* WatchLandmarks.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C2D89DFE24B8FC820096C79B /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2FEB33C24B7CD01004FAB73 /* Profile.swift */; };
-		C2D89DFF24B8FC820096C79B /* LandmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20D780A24B68B4D002E7AEA /* LandmarkList.swift */; };
 		C2D89E0024B8FC820096C79B /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20D77FE24B67FB3002E7AEA /* MapView.swift */; };
 		C2D89E0124B8FC820096C79B /* LandmarkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20D780024B6846F002E7AEA /* LandmarkRow.swift */; };
 		C2D89E0224B8FC820096C79B /* Hike.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20D781F24B6CCCF002E7AEA /* Hike.swift */; };
@@ -156,6 +156,7 @@
 		6DCB332D2952110F00EED679 /* MacLandmarksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacLandmarksUITests.swift; sourceTree = "<group>"; };
 		6DCB332F2952110F00EED679 /* MacLandmarksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacLandmarksUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6DCB33472952139300EED679 /* LandmarkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
+		6DCB334929521AD800EED679 /* LandmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkList.swift; sourceTree = "<group>"; };
 		C20D77EA24B665D7002E7AEA /* Landmarks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Landmarks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C20D77ED24B665D7002E7AEA /* LandmarksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarksApp.swift; sourceTree = "<group>"; };
 		C20D77EF24B665D7002E7AEA /* LandmarkDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandmarkDetail.swift; sourceTree = "<group>"; };
@@ -439,6 +440,7 @@
 				C2D89DF124B8F7850096C79B /* Info.plist */,
 				C2D89DF224B8F7850096C79B /* PushNotificationPayload.apns */,
 				C2D89DEE24B8F7850096C79B /* Preview Content */,
+				6DCB334929521AD800EED679 /* LandmarkList.swift */,
 			);
 			path = "WatchLandmarks Extension";
 			sourceTree = "<group>";
@@ -806,8 +808,8 @@
 				C2D89DE724B8F7850096C79B /* NotificationController.swift in Sources */,
 				C2D89E0024B8FC820096C79B /* MapView.swift in Sources */,
 				C2D89E0524B8FC820096C79B /* ModelData.swift in Sources */,
+				6DCB334A29521AD800EED679 /* LandmarkList.swift in Sources */,
 				C2D89DFE24B8FC820096C79B /* Profile.swift in Sources */,
-				C2D89DFF24B8FC820096C79B /* LandmarkList.swift in Sources */,
 				C2D89DEB24B8F7850096C79B /* ComplicationController.swift in Sources */,
 				C2D89E5724B929DE0096C79B /* ContentView.swift in Sources */,
 				C2D89E0324B8FC820096C79B /* CircleImage.swift in Sources */,
