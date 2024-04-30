@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 import CoreLocation
 
-struct Landmark: Hashable, Codable { // Codable to move data between structure and data file
+struct Landmark: Hashable, Codable, Identifiable { // Codable to move data between structure and data file
     var id: Int
     var name: String
     var park: String
