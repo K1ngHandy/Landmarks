@@ -36,7 +36,8 @@ struct LandmarkRow: View {
 //}
 
 #Preview { // group previews together
-    Group {
+    let landmarks = ModelData().landmarks
+    return Group {
         LandmarkRow(landmark: landmarks[0])
         LandmarkRow(landmark: landmarks[1])
     }
