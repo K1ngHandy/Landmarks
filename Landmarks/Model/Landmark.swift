@@ -17,6 +17,13 @@ struct Landmark: Hashable, Codable, Identifiable { // Codable to move data betwe
     var description: String
     var isFavorite: Bool
     
+    var category: Category
+    enum Category: String, CaseIterable, Codable { // matches names in data file
+        case lakes = "Lakes"
+        case rivers = "Rivers"
+        case mountains = "Mountains"
+    }
+    
     private var imageName: String
     var image: Image {
         Image(imageName)
