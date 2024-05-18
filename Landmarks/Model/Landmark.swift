@@ -16,6 +16,7 @@ struct Landmark: Hashable, Codable, Identifiable { // Codable to move data betwe
     var state: String
     var description: String
     var isFavorite: Bool
+    var isFeatured: Bool
     
     var category: Category
     enum Category: String, CaseIterable, Codable { // matches names in data file
