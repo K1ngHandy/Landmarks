@@ -51,6 +51,7 @@
 		A78D1A792BFA2E94006AEF32 /* HikeBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78D1A782BFA2E94006AEF32 /* HikeBadge.swift */; };
 		A79D02062BE13AFC005C902E /* LandmarkRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79D02052BE13AFC005C902E /* LandmarkRow.swift */; };
 		A79D02082BE13D1D005C902E /* LandmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79D02072BE13D1D005C902E /* LandmarkList.swift */; };
+		A7A208062C2A542800E63D6B /* LandmarkDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76A65AF2BE2177F006E9AD9 /* LandmarkDetail.swift */; };
 		A7A53AFA2C04D437003F0983 /* FeatureCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A53AF92C04D437003F0983 /* FeatureCard.swift */; };
 		A7A53AFC2C04D690003F0983 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7A53AFB2C04D690003F0983 /* PageView.swift */; };
 		A7B9DE3A2BE7D98700A155B8 /* HexagonParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B9DE392BE7D98700A155B8 /* HexagonParameters.swift */; };
@@ -662,6 +663,7 @@
 				A761414F2C24542B00B6EDF3 /* LandmarkRow.swift in Sources */,
 				A76141502C24542B00B6EDF3 /* LandmarksApp.swift in Sources */,
 				A76141512C24542B00B6EDF3 /* ModelData.swift in Sources */,
+				A7A208062C2A542800E63D6B /* LandmarkDetail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

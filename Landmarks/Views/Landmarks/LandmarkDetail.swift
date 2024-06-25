@@ -18,41 +18,37 @@ struct LandmarkDetail: View {
     var body: some View {
         @Bindable var modelData = modelData
         
-        ScrollView { // user can scroll through descriptive content
-            MapView(coordinate: landmark.locationCoordinate)
-                .frame(height: 300)
-            
-            CircleImage(image: landmark.image)
-                .offset(y: -130)
-                .padding(.bottom, -130)
-            
-            VStack(alignment: .leading) {
-                HStack {
-                    Text(landmark.name)
-                        .font(.title)
-                    FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite)
-                    // ensures button updates isFavorite property of the landmark stored in your model object
-                }
+        ScrollView {
+            VStack {
+                CircleImage(image: landmark.image.resizable())
+                    .scaledToFit()
                 
-                HStack {
-                    Text(landmark.park)
-                        .font(.subheadline)
-                    Spacer()
-                    Text(landmark.state)
+                Text(landmark.name)
+                    .font(.headline)
+                    .lineLimit(0)
+                
+                Toggle(isOn: $modelData.landmarks[landmarkIndex].isFavorite) {
+                    Text("Favorite")
                 }
-                .font(.subheadline)
-                .foregroundStyle(.secondary)
+                    
+                Divider()
+                    
+                Text(landmark.park)
+                    .font(.caption)
+                    .bold()
+                    .lineLimit(0)
+                
+                Text(landmark.state)
+                    .font(.caption)
                 
                 Divider()
                 
-                Text("About \(landmark.name)")
-                    .font(.title2)
-                Text(landmark.description)
+                MapView(coordinate: landmark.locationCoordinate)
+                    .scaledToFit()
             }
-            .padding()
+            .padding(16)
         }
-        .navigationTitle(landmark.name)
-        .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("Landmarks")
     }
 }
 
