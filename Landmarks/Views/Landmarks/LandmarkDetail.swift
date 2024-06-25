@@ -18,37 +18,40 @@ struct LandmarkDetail: View {
     var body: some View {
         @Bindable var modelData = modelData
         
-        ScrollView {
-            VStack {
-                CircleImage(image: landmark.image.resizable())
-                    .scaledToFit()
-                
-                Text(landmark.name)
-                    .font(.headline)
-                    .lineLimit(0)
-                
-                Toggle(isOn: $modelData.landmarks[landmarkIndex].isFavorite) {
-                    Text("Favorite")
+        ScrollView { // user can scroll through descriptive content
+            MapView(coordinate: landmark.locationCoordinate)
+                .frame(height: 300)
+            
+            CircleImage(image: landmark.image)
+                .offset(y: -130)
+                .padding(.bottom, -130)
+            
+            VStack(alignment: .leading) {
+                HStack {
+                    Text(landmark.name)
+                        .font(.title)
+                    FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite)
+                    // ensures button updates isFavorite property of the landmark stored in your model object
                 }
-                    
-                Divider()
-                    
-                Text(landmark.park)
-                    .font(.caption)
-                    .bold()
-                    .lineLimit(0)
                 
-                Text(landmark.state)
-                    .font(.caption)
+                HStack {
+                    Text(landmark.park)
+                    Spacer()
+                    Text(landmark.state)
+                }
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
                 
                 Divider()
                 
-                MapView(coordinate: landmark.locationCoordinate)
-                    .scaledToFit()
+                Text("About \(landmark.name)")
+                    .font(.title2)
+                Text(landmark.description)
             }
-            .padding(16)
+            .padding()
         }
-        .navigationTitle("Landmarks")
+        .navigationTitle(landmark.name)
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
