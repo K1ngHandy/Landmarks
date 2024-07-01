@@ -15,7 +15,16 @@ struct LandmarkRow: View {
             landmark.image
                 .resizable()
                 .frame(width: 50, height: 50)
-            Text(landmark.name)
+                .cornerRadius(5)
+            VStack(alignment: .leading) {
+                Text(landmark.name)
+                    .bold()
+                #if !os(watchOS)
+                Text(landmark.park)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                #endif
+            }
             
             Spacer()
             
@@ -24,20 +33,13 @@ struct LandmarkRow: View {
                     .foregroundColor(.yellow)
             }
         }
+        .padding(.vertical, 4)
     }
 }
 
-//#Preview("Turtle Rock") {
-//    LandmarkRow(landmark: landmarks[0]) // instantiate landmark var
-//}
-//
-//#Preview("Salmon") {
-//    LandmarkRow(landmark: landmarks[1])
-//}
-
-#Preview { // group previews together
+#Preview {
     let landmarks = ModelData().landmarks
-    return Group {
+    return Group { // group previews together
         LandmarkRow(landmark: landmarks[0])
         LandmarkRow(landmark: landmarks[1])
     }

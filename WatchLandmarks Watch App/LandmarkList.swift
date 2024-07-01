@@ -1,17 +1,15 @@
 //
 //  LandmarkList.swift
-//  Landmarks
+//  WatchLandmarks Watch App
 //
-//  Created by Steve Handy on 2024.04.30.
+//  Created by Steve Handy on 2024.07.01.
 //
 
 import SwiftUI
 
 struct LandmarkList: View {
     @Environment(ModelData.self) var modelData
-    // read model data of current view
     @State private var showFavoritesOnly = false
-    // state as private to hold information specific to a view and its state
     
     var filteredLandmarks: [Landmark] {
         modelData.landmarks.filter { landmark in
@@ -22,7 +20,7 @@ struct LandmarkList: View {
     var body: some View {
         NavigationSplitView {
             List {
-                Toggle(isOn: $showFavoritesOnly) { // $ prefix to add binding to state variable
+                Toggle(isOn: $showFavoritesOnly) {
                     Text("Favorites only")
                 }
                 
@@ -36,9 +34,8 @@ struct LandmarkList: View {
             }
             .animation(.default, value: filteredLandmarks)
             .navigationTitle("Landmarks")
-            .frame(minWidth: 300) // minimum size for macOS window
         } detail: {
-            Text("Select a Landmark") // iPad placeholder
+            Text("Select a Landmark")
         }
     }
 }
