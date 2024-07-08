@@ -13,6 +13,7 @@ struct LandmarkList: View {
     @State private var showFavoritesOnly = false
     // state as private to hold information specific to a view and its state
     @State private var filter = FilterCategory.all
+    @State private var selectedLandmark: Landmark?
     
     enum FilterCategory: String, CaseIterable, Identifiable {
         case all = "All"
@@ -35,15 +36,22 @@ struct LandmarkList: View {
         return showFavoritesOnly ? "Favorite \(title)" : title
     }
     
+    var index: Int? {
+        modelData.landmarks.firstIndex(where: { $0.id == selectedLandmark?.id })
+    }
+    
     var body: some View {
+        @Bindable var modelData = modelData
+        
         NavigationSplitView {
-            List {
+            List(selection: $selectedLandmark) {
                 ForEach(filteredLandmarks) { landmark in
                     NavigationLink {
                         LandmarkDetail(landmark: landmark)
                     } label: {
                         LandmarkRow(landmark: landmark)
                     }
+                    .tag(landmark)
                 }
             }
             .animation(.default, value: filteredLandmarks)
@@ -70,6 +78,7 @@ struct LandmarkList: View {
         } detail: {
             Text("Select a Landmark") // iPad placeholder
         }
+        .focusedValue(\.selectedLandmark, $modelData.landmarks[index ?? 0])
     }
 }
 
